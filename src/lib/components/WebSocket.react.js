@@ -54,7 +54,11 @@ export default class DashWebSocket extends Component {
                     reason: e.reason,
                     wasClean: e.wasClean,
                 }
-            })
+            });
+            // ReEstablish open WebSocket Connection for component after 4 seconds?
+            setTimeout(function(){
+                this._init_client();
+            }, 4000);
         }
     }
 
